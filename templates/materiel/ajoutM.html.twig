@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %} {% block title %}echange materiel{% endblock %}
+{% block content %}
+
+<div style="height: 79vh">
+
+
+    {{ form_start(form,{'attr': {'novalidate': 'novalidate'}} ) }} 
+
+  
+    
+      {{form_widget(form)}}
+    
+      
+    
+  {{ form_end(form) }}
+
+</div>
+{% endblock %}

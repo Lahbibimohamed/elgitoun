@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use App\Repository\PublicationEquipementRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass=PublicationEquipementRepository::class)
@@ -18,27 +20,41 @@ class PublicationEquipement
     private $id;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *Type("string")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     * )
+     *@Assert\NotNull
+     * 
+     * @ORM\Column(type="string", length=255 ,nullable=true)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="text")
+     * /**
+     *Type("string")
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 50,
+     * )
+     *@Assert\NotNull
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $price;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255 , nullable=true)
      */
     private $image;
 
