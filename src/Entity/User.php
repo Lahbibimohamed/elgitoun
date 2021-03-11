@@ -79,6 +79,11 @@ class User
      */
     private $feedback;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $phone_number;
+
     public function __construct()
     {
         $this->reservationEvenements = new ArrayCollection();
@@ -323,6 +328,18 @@ class User
                 $feedback->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phone_number;
+    }
+
+    public function setPhoneNumber(string $phone_number): self
+    {
+        $this->phone_number = $phone_number;
 
         return $this;
     }
